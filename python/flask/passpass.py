@@ -11,8 +11,9 @@ __maintainer__ = "Carlan Calazans"
 __email__ = "carlancalazans at gmail dot com"
 __status__ = "Development"
 
-from flask import Flask, render_template, url_for, render_template
 import random
+from flask import Flask, render_template, url_for, render_template
+from generator import PasswordGenerator
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -20,7 +21,9 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/', methods=['GET'])
 def index():
-    password = random.random()
+    #password = random.random()
+    pass_gen = PasswordGenerator()
+    password = pass_gen.generate()[0]
     return render_template('index.html', password=password)
 
 if __name__ == '__main__':
