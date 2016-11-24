@@ -29,19 +29,22 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">PassPass</h3>
+              <a href="{{ url_for('index') }}">
+                <h1 class="masthead-brand">PassPass</h1>
+              </a>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
+                  <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                  <li><a href="{{ url_for('index') }}">About</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <!--If we click on an password item, copy to clipboard?-->
-            <h1 class="cover-heading">{{ password }}</h1>
+            <a href="#" class="copyme" data-clipboard-text="{{ password }}">
+              <h2 class="cover-heading">{{ password }}</h2>
+            </a>
             <p class="lead">
               <a href="{{ url_for('index') }}" class="btn btn-lg btn-default">Generate another one</a>
             </p>
@@ -55,5 +58,9 @@
 
     <script src="{{ url_for('static', filename='javascript/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/clipboard.min.js') }}"></script>
+    <script>
+      const clipboard = new Clipboard('.copyme');
+    </script>
   </body>
 </html>
