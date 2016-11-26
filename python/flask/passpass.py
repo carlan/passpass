@@ -21,10 +21,13 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/', methods=['GET'])
 def index():
-    #password = random.random()
     pass_gen = PasswordGenerator()
     password = pass_gen.generate()[0]
     return render_template('index.html', password=password)
+
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

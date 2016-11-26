@@ -34,19 +34,20 @@
               </a>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
-                  <li><a href="{{ url_for('about') }}">About</a></li>
+                  <li><a href="{{ url_for('index') }}">Home</a></li>
+                  <li class="active"><a href="{{ url_for('about') }}">About</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <a href="#" class="copyme" data-clipboard-text="{{ password }}">
-              <h1 class="cover-heading">{{ password }}</h1>
-            </a>
             <p class="lead">
-              <a href="{{ url_for('index') }}" class="btn btn-lg btn-default">Generate another one</a>
+              Hi, I'm Carlan. This is a password generator based on some rules. While this is a very simple application the generated passwords are very strong. 
+            </p>
+
+            <p class="lead">
+              I created this app to learn more about the Flask framework, which was written in Python. It's very similar to bottle tho. And sinatra, written in Ruby. You know what it's reminds me from a far distance too? Spark for Java. I don't know, I love microframeworks, they are so simple to prototype something.
             </p>
           </div>
 
